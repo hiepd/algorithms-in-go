@@ -23,14 +23,13 @@ func genPermutations(nums []int, k int, res *[][]int) {
 		// generate permutations
 		genPermutations(nums, k-1, res)
 		// if k is even, swap current item with last item
+		temp := nums[k-1]
 		if k%2 == 0 {
-			temp := nums[i]
-			nums[i] = nums[k-1]
-			nums[k-1] = temp
+			nums[k-1] = nums[i]
+			nums[i] = temp
 		} else { // if k is odd, swap first item with last item
-			temp := nums[0]
-			nums[0] = nums[k-1]
-			nums[k-1] = temp
+			nums[k-1] = nums[0]
+			nums[0] = temp
 		}
 	}
 
